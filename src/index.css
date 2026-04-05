@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: #0f0f23;
+  --foreground: #f8fafc;
+  --card: #161632;
+  --card-foreground: #f8fafc;
+  --popover: #161632;
+  --popover-foreground: #f8fafc;
+  --primary: #1e1b4b;
+  --primary-foreground: #f8fafc;
+  --secondary: #312e81;
+  --secondary-foreground: #f8fafc;
+  --muted: #1f2345;
+  --muted-foreground: #cbd5e1;
+  --accent: #ca8a04;
+  --accent-foreground: #0f0f23;
+  --destructive: #dc2626;
+  --border: #2a2f55;
+  --input: #252949;
+  --ring: #ca8a04;
+  --chart-1: #ca8a04;
+  --chart-2: #818cf8;
+  --chart-3: #60a5fa;
+  --chart-4: #facc15;
+  --chart-5: #a78bfa;
+  --sidebar: #11112b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #ca8a04;
+  --sidebar-primary-foreground: #0f0f23;
+  --sidebar-accent: #1e1b4b;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #2a2f55;
+  --sidebar-ring: #ca8a04;
+}
+
+.dark {
+  --background: #090914;
+  --foreground: #f8fafc;
+  --card: #101026;
+  --card-foreground: #f8fafc;
+  --popover: #101026;
+  --popover-foreground: #f8fafc;
+  --primary: #312e81;
+  --primary-foreground: #f8fafc;
+  --secondary: #1e1b4b;
+  --secondary-foreground: #f8fafc;
+  --muted: #171b35;
+  --muted-foreground: #cbd5e1;
+  --accent: #ca8a04;
+  --accent-foreground: #0f0f23;
+  --destructive: #ef4444;
+  --border: #252949;
+  --input: #1f2345;
+  --ring: #ca8a04;
+  --chart-1: #ca8a04;
+  --chart-2: #818cf8;
+  --chart-3: #60a5fa;
+  --chart-4: #facc15;
+  --chart-5: #a78bfa;
+  --sidebar: #090914;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #ca8a04;
+  --sidebar-primary-foreground: #0f0f23;
+  --sidebar-accent: #1e1b4b;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #252949;
+  --sidebar-ring: #ca8a04;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Atkinson Hyperlegible', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
